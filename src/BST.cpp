@@ -181,7 +181,7 @@ typename BinarySearchTree<T>::Node * BinarySearchTree<T>::search_recursive(Node*
 	if (!node || node->data == key) return root;
 	if (node->data < key)
 		return search_recursive(node->right, key);
-	return (node->left, key);
+	return search_recursive(node->left, key);
 }
 template<typename T>
 bool BinarySearchTree<T>::search(T key) {
