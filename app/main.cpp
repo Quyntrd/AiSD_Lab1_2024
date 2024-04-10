@@ -20,7 +20,7 @@ vector<int> find_uniques(const vector<int>& in) {
 	return result;
 }
 int main() {
-	vector<int> vect{1, 5, 5, 2, 7, 9, 11, 11};
+	vector<int> vect{3, 2, 2, 4};
 	vector<int> unique = find_uniques(vect);
 	cout << "first vector: ";
 	for (int i = 0; i < vect.size(); ++i) {
@@ -39,5 +39,7 @@ int main() {
 	bst.insert("3");
 	bst.insert("7");
 	bst.insert("8");
+	bst.print();
+	bst.erase("5");
 	bst.print();
 }
