@@ -170,7 +170,7 @@ bool BinarySearchTree<T>::erase(T key) {
 template<typename T>
 int BinarySearchTree<T>::count_recursive(Node* node) {
 	if (!node) return 0;
-	return count_recursive(node->recursive) + count_recursive(node->left) + 1;
+	return count_recursive(node->right) + count_recursive(node->left) + 1;
 }
 template<typename T>
 int BinarySearchTree<T>::count() {

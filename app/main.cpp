@@ -40,6 +40,12 @@ int main() {
 	bst.insert("7");
 	bst.insert("8");
 	bst.print();
+	cout << "Count of Nodes " << bst.count() << endl;
 	bst.erase("5");
 	bst.print();
+	cout << "Count of Nodes " << bst.count() << endl;
+	string str = "4";
+	cout << "bst tree contains " << str << "? - " << (bst.contains(str) ? "Yes" : "No") << endl;
+	string str1 = "7";
+	cout << "bst tree contains " << str1 << "? - " << (bst.contains(str1) ? "Yes" : "No") << endl;
 }
