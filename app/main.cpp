@@ -48,4 +48,5 @@ int main() {
 	cout << "bst tree contains " << str << "? - " << (bst.contains(str) ? "Yes" : "No") << endl;
 	string str1 = "7";
 	cout << "bst tree contains " << str1 << "? - " << (bst.contains(str1) ? "Yes" : "No") << endl;
+	bst.search("6");
 }
