@@ -19,6 +19,7 @@ add_library(Set-v1 SHARED "src/BST.cpp")
 
 target_include_directories(Set-v1 PUBLIC "src")
 add_executable (Set-v1-main "app/main.cpp")
-
+add_executable (Set-v1-time "app/time_calculation.cpp")
 target_link_libraries(Set-v1-main Set-v1)
+target_link_libraries(Set-v1-time Set-v1)
 
