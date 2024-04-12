@@ -47,6 +47,7 @@ typename BinarySearchTree<T>::Node * BinarySearchTree<T>::copy_tree(const Node* 
 }
 template<typename T>
 BinarySearchTree<T>::BinarySearchTree(const BinarySearchTree<T>& other) : root(copy_tree(other.root)){}
+
 template<typename T>
 void BinarySearchTree<T>::destroy_recursive(Node* node) {
 	if (node) {
@@ -142,7 +143,7 @@ void BinarySearchTree<T>::erase_recursive(Node*& node, const T key) {
 			node = tmp;
 		}
 		else if (!node->right) {
-			Node* tmp = node->right;
+			Node* tmp = node->left;
 			delete node;
 			node = tmp;
 		}

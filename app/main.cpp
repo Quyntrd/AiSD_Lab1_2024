@@ -10,17 +10,18 @@ vector<int> find_uniques(const vector<int>& in) {
 	BinarySearchTree<int> bst;
 	for (int i : in) {
 		bool flag = bst.insert(i);
-		if (flag) { // Ёквивалентность if(flag) и if(flag == true)
-			result.push_back(i);
+		if (flag) {
+			result.push_back(i);	
 		}
 		else {
-			result.pop_back();
+			vector<int>::iterator it = find(result.begin(), result.end(), i);
+			result.erase(it);
 		}
 	}
 	return result;
 }
 int main() {
-	vector<int> vect{3, 2, 2, 4};
+	vector<int> vect{3, 2, 2, 4, 11, 4,11, 35, 6, 7};
 	vector<int> unique = find_uniques(vect);
 	cout << "first vector: ";
 	for (int i = 0; i < vect.size(); ++i) {
@@ -41,7 +42,7 @@ int main() {
 	bst.insert("8");
 	bst.print();
 	cout << "Count of Nodes " << bst.count() << endl;
-	bst.erase("5");
+	bst.erase("6");
 	bst.print();
 	cout << "Count of Nodes " << bst.count() << endl;
 	string str = "4";
