@@ -32,7 +32,7 @@ public:
 	bool contains(T key) const;
 	bool erase(T key);
 	int count();
-	bool search(T key);
+	const Node* search(T key);
 };
 
 template<typename T>
@@ -182,10 +182,11 @@ typename BinarySearchTree<T>::Node * BinarySearchTree<T>::search_recursive(Node*
 	if (!node || node->data == key) return root;
 	if (node->data < key)
 		return search_recursive(node->right, key);
-	return search_recursive(node->left, key);
+	else if (node->data > key)
+		return search_recursive(node->left, key);
+	else return nullptr;
 }
 template<typename T>
-bool BinarySearchTree<T>::search(T key) {
-	if (search_recursive(root, key)) return true;
-	return false;
+typename const BinarySearchTree<T>::Node * BinarySearchTree<T>::search(T key) {
+	return (search_recursive(root, key));
 }
